@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Welcome to Randomized List");
         System.out.println("Do you want to:\nOPEN a list\nCREATE a new list\nEDIT an existing" +
                 " list\nDELETE a list");
-        Scanner inp = new Scanner(System.in);
+        Scanner inp = new Scanner(System.in);   
         System.out.println("Enter OPEN, CREATE, EDIT or DELETE");
         String choice = inp.nextLine();
 
