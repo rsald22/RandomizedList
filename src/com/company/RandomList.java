@@ -1,8 +1,9 @@
 package com.company;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RandomList {
+public class RandomList implements Serializable {
 
     private ArrayList list;
     private String name;
