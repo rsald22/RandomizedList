@@ -22,7 +22,7 @@ public class Main {
 
         inp.close();
 
-        //MasterList.checkState(ml);
+        MasterList.checkState(ml);
 
         MasterList.save();
 
@@ -34,34 +34,22 @@ public class Main {
     }
 
     public static void createList(){
-        String name = "";
         System.out.println("What type of list do you want to make?" +
                 "\nSTRING or INTEGER");
         Scanner input = new Scanner(System.in);
         String type = input.nextLine();
-        boolean nameOption = false;
-
-        /*
-            THIS BIT SHOULD BE IN A METHOD IN THE MASTERLIST FUNCTION.
-         */
-        while (nameOption == false) {
-
-            if (ml.size() == 0){
-                System.out.println("What do you want to name this list?");
-                name = input.nextLine();
-                ml.add(new RandomList(type, name));
-            } else {
-                for (int i = 0; i < ml.size(); i++) {
-                    if (ml.get(i).getName().equals(name)) {
-                        System.out.println("Name already in use");
-                        break;
-                    } else {
-                        ml.add(new RandomList(type, name));
-                        nameOption = true;
-                    }
-                }
-            }
+        String name = "";
+        boolean created = false;
+        do{
+            System.out.println("Name of list? ");
+            name = input.nextLine();
+            created = MasterList.createList(type, name);
         }
+        while (created == false);
+
+
+
+
 
         System.out.println("List successfully created");
         System.out.println("Do you want to add to this list?");
@@ -76,6 +64,8 @@ public class Main {
             Have the editting / adding bit in the random list class
             but use this side for input getting + accessing the masterlist as needed?
          */
+
+        System.out.println("HELLO WORLD");
     }
 
 }

@@ -52,6 +52,17 @@ public class MasterList implements Serializable {
         return list.size() == modList.size();
     }
 
+    public static boolean createList(String type, String name) {
+        for (int i = 0; i < list.size(); i++){
+            if (!(list.get(i).getName().equals(name))){
+                list.add(new RandomList(type, name));
+                return true;
+            }
+        }
+
+        System.out.println("Name already in use");
+        return false;
+    }
 
 
 
